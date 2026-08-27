@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>結びの社｜今なう Seed Capture</title>
+<style>
+:root{--bg:#f6f2e9;--paper:#fffdf8;--ink:#28241f;--muted:#746d63;--line:#ddd4c5;--accent:#765b36;--soft:#eee6d8;--danger:#8a4d46}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink)}
+main{max-width:820px;margin:auto;padding:28px 18px 64px}.hero{text-align:center;padding:18px 0 8px}.logo{width:128px;height:128px;object-fit:contain}.eyebrow{letter-spacing:.18em;color:var(--muted);font-size:.78rem}.hero h1{font-family:serif;font-size:2.2rem;margin:.3rem 0}.hero p{color:var(--muted);margin:.3rem 0 1.4rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0}.card h2{font-size:1.05rem;margin:0 0 14px}.seed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.seed{min-height:64px;border:1px solid var(--line);background:#fff;border-radius:14px;font-size:.95rem;cursor:pointer;padding:10px}.seed[aria-pressed="true"]{outline:3px solid #c7b28e;background:var(--soft)}
+label{display:block;font-size:.88rem;color:var(--muted);margin:14px 0 6px}textarea,input{width:100%;font:inherit;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}textarea{min-height:78px;resize:vertical}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}button.primary{border:0;border-radius:12px;background:var(--ink);color:white;padding:12px 18px;font-weight:700;cursor:pointer}.ghost{border:1px solid var(--line);border-radius:12px;background:white;padding:12px 16px;cursor:pointer}.hint{font-size:.82rem;color:var(--muted)}
+.entry{border-top:1px solid var(--line);padding:12px 0}.entry:first-child{border-top:0}.entry-head{display:flex;justify-content:space-between;gap:10px;font-size:.82rem;color:var(--muted)}.entry p{margin:.4rem 0}.empty{color:var(--muted);font-style:italic}.recovery{display:grid;grid-template-columns:1fr 1fr;gap:12px}.recovery div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px}.recovery strong{display:block;font-size:.8rem;color:var(--muted);margin-bottom:5px}.footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:28px}
+@media(max-width:560px){.seed-grid{grid-template-columns:repeat(2,1fr)}.recovery{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+</style>
+</head>
+<body><main>
+<section class="hero">
+<img class="logo" src="logo.png" alt="結びの社 ロゴ">
+<div class="eyebrow">SAYU × AI</div><h1>結びの社</h1>
+<p>今この瞬間に生まれた「種」を、未来へ結ぶ場所。</p>
+</section>
+
+<section class="card">
+<h2>⛩️ 今なう — 何が起きた？</h2>
+<div class="seed-grid" id="seedGrid">
+<button class="seed" data-seed="💡 閃き">💡 閃き</button><button class="seed" data-seed="👀 違和感">👀 違和感</button><button class="seed" data-seed="💓 感動・身体反応">💓 感動・身体反応</button>
+<button class="seed" data-seed="⚠️ 危機察知">⚠️ 危機察知</button><button class="seed" data-seed="🌱 Productの種">🌱 Productの種</button><button class="seed" data-seed="💰 事業の種">💰 事業の種</button>
+<button class="seed" data-seed="🛠 仕組み化">🛠 仕組み化</button><button class="seed" data-seed="📜 建国史かも">📜 建国史かも</button><button class="seed" data-seed="🗣 AIの言葉">🗣 AIの言葉</button>
+<button class="seed" data-seed="❓ まだ分からない">❓ まだ分からない</button>
+</div>
+<label for="memo">一言だけ預ける <span class="hint">（空欄でもOK）</span></label>
+<textarea id="memo" placeholder="例：十日一昔。忘れないOSではなく、戻れるOS。"></textarea>
+<label for="partner">誰との対話？ <span class="hint">（任意）</span></label>
+<input id="partner" placeholder="例：チャッピー / クローディ / ジェミー">
+<div class="actions"><button class="primary" id="save">未来へ預ける</button><button class="ghost" id="clearForm">入力をクリア</button></div>
+<p class="hint" id="status" aria-live="polite">種を選んで、必要なら一言だけ。</p>
+</section>
+
+<section class="card"><h2>🌱 今日の種</h2><div id="entries" class="empty">まだ種は預けられていません。</div></section>
+
+<section class="card"><h2>🧭 State Recovery</h2><div class="recovery">
+<div><strong>前回の現在地</strong><span>福祉・アクセシビリティ事業仮説 → 世田谷区Small PoC直前</span></div>
+<div><strong>NEXT ACTION</strong><span>リサーチ票 v0.1 → 1事業所テスト</span></div>
+<div><strong>今回の発見</strong><span>「十日一昔」問題 → Seed Capture ＋ State Recovery</span></div>
+<div><strong>仮称</strong><span>結びの社｜Musubi no Yashiro v0.1</span></div>
+</div></section>
+
+<section class="card"><h2>🎼 変奏共創ログ #001</h2>
+<p><strong>Seed：</strong>「積み上げ寺、SayuのAICOS版で一つできないかなぁ」</p>
+<p><strong>Variation：</strong>State Recovery → 変奏共創ログ → Seed Capture → 未来のお社</p>
+<p><strong>Connection：</strong>「結びの社」→ 丸に隅立て四ツ目結／ふくまどうロゴとの接続</p>
+<p><strong>Meaning：</strong>過去と未来、SayuとAI、閃きと実装、経験と仕組みを結ぶ。</p>
+</section>
+
+<div class="footer">Prototype v0.1 — まず使う。触る。違和感を拾う。そこから育てる。</div>
+</main>
+<script>
+(()=>{const buttons=[...document.querySelectorAll('.seed')],memo=document.getElementById('memo'),partner=document.getElementById('partner'),entries=document.getElementById('entries'),status=document.getElementById('status');let selected='';
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');selected=b.dataset.seed;status.textContent=selected+' を選びました。';memo.focus();}));
+function render(){const data=JSON.parse(localStorage.getItem('musubiSeeds')||'[]');const today=new Date().toLocaleDateString('ja-JP');const todays=data.filter(x=>x.day===today);if(!todays.length){entries.className='empty';entries.textContent='まだ種は預けられていません。';return}entries.className='';entries.innerHTML=todays.slice().reverse().map(x=>`<div class="entry"><div class="entry-head"><span>${escapeHtml(x.seed)}</span><span>${escapeHtml(x.time)}</span></div><p>${escapeHtml(x.memo||'（一言メモなし）')}</p>${x.partner?`<div class="hint">対話：${escapeHtml(x.partner)}</div>`:''}</div>`).join('')}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+document.getElementById('save').addEventListener('click',()=>{if(!selected){status.textContent='先に「種」をひとつ選んでください。';return}const now=new Date(),data=JSON.parse(localStorage.getItem('musubiSeeds')||'[]');data.push({seed:selected,memo:memo.value.trim(),partner:partner.value.trim(),day:now.toLocaleDateString('ja-JP'),time:now.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'})});localStorage.setItem('musubiSeeds',JSON.stringify(data));status.textContent='⛩️ 未来へ預けました。';memo.value='';partner.value='';selected='';buttons.forEach(x=>x.setAttribute('aria-pressed','false'));render()});
+document.getElementById('clearForm').addEventListener('click',()=>{memo.value='';partner.value='';selected='';buttons.forEach(x=>x.setAttribute('aria-pressed','false'));status.textContent='入力をクリアしました。'});render();})();
+</script>
+</body></html>
